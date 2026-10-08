@@ -1,8 +1,8 @@
 /* ============================================================
    WEBNIX – config.js
-   Configurazione centralizzata: Firebase, contatti, social.
-   Unico punto di verità: usato sia per LEGGERE che per SCRIVERE
-   le recensioni (prima era duplicato tra HTML e scriptrecensione.js).
+   Configurazione centralizzata: Firebase, contatti, social,
+   limiti recensioni. Unico punto di verità: usato sia per
+   LEGGERE che per SCRIVERE le recensioni.
    Solo JavaScript vanilla, nessuna dipendenza esterna obbligatoria.
    ============================================================ */
 

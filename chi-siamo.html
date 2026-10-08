@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo | La storia di Webnix | Webnix – Siti Web per Nuove Attività</title>
+  <meta name="description" content="Webnix è una digital agency di Genova: siti onesti, codice di proprietà, bozza gratuita. Scopri i nostri valori.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome: unico uso di classi esterne (marker tecnici fa-solid / fa-brands) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- ============ LOADER GLOBALE ============ -->
+  <div id="global-loader2" aria-hidden="true">
+    <div id="loader2-anello">
+      <div id="loader2-cerchio">
+        <span id="loader2-brand">WEBNIX</span>
+        <span id="loader2-tag">DIGITAL AGENCY</span>
+      </div>
+    </div>
+    <p id="loader2-testo">Caricamento in corso...</p>
+    <div id="loader2-barra"><span id="loader2-progresso"></span></div>
+  </div>
+
+  <!-- ============ OVERLAY MENU MOBILE ============ -->
+  <div id="menu-overlay"></div>
+
+  <!-- ============ HEADER / NAV (fisso) ============ -->
+  <header id="header">
+    <div id="header-inner">
+      <a href="index.html" id="logo-link" aria-label="Webnix - torna alla home">
+        <img id="logo-img" src="loghi/WEBNIX.png" alt="Logo Webnix">
+      </a>
+      <nav id="nav-desktop" aria-label="Navigazione principale">
+        <a href="index.html" id="link-home">Home</a>
+        <a href="servizi.html" id="link-servizi">Servizi</a>
+        <a href="faq.html" id="link-faq">FAQ</a>
+        <a href="assistenza.html" id="link-assistenza">Assistenza</a>
+        <a href="chi-siamo.html" id="link-chisiamo">Chi Siamo</a>
+        <a href="contatti.html" id="link-contatti">Contatti</a>
+        <a href="admin.html" id="link-admin">Admin</a>
+        <a href="index.html#contatti" id="nav-cta">Bozza Gratuita</a>
+      </nav>
+      <button id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span id="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ DRAWER MOBILE ============ -->
+  <nav id="nav-mobile" aria-label="Navigazione mobile">
+    <a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+    <a href="servizi.html"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Servizi</a>
+    <a href="faq.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQ</a>
+    <a href="assistenza.html"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Assistenza</a>
+    <a href="chi-siamo.html"><i class="fa-solid fa-users" aria-hidden="true"></i> Chi Siamo</a>
+    <a href="contatti.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contatti</a>
+    <a href="admin.html"><i class="fa-solid fa-lock" aria-hidden="true"></i> Admin</a>
+    <a href="index.html#contatti" id="nav-mobile-cta">Bozza Gratuita</a>
+  </nav>
+
+  <main>
+    <!-- Hero pagina -->
+    <section id="hero-page">
+      <div>
+        <h1>Chi siamo: <span id="hero-page-brand">Webnix</span></h1>
+        <p>Una piccola agenzia con un'idea grande: web onesto per le nuove attività.</p>
+      </div>
+    </section>
+
+    <!-- Storia + valori -->
+    <section id="chisiamo">
+      <h2 id="titolo-chisiamo">La nostra storia</h2>
+      <p id="sottotitolo-chisiamo">Nati per difendere chi apre oggi da truffe dei canoni e siti lenti.</p>
+
+      <p id="chisiamo-testo">
+        Webnix nasce a Genova dall'esperienza diretta: vedere <strong>nuove attività perdere clienti ogni giorno</strong>
+        perché invisibili su Google, ostaggio di piattaforme lente o di preventivi gonfiati da costi nascosti.
+        Abbiamo scelto la strada opposta: <strong>siti statici in HTML, CSS e JavaScript puro</strong>,
+        codice di proprietà del cliente, bozza gratuita prima di qualsiasi pagamento, prezzi scritti nero su bianco.
+        Piccoli, veloci, trasparenti: esattamente come dovrebbe essere un sito web.
+      </p>
+
+      <div id="chisiamo-valori">
+        <article id="valore-1">
+          <span id="icona-valore-1"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+          <h3>Onestà radicale</h3>
+          <p>Bozza gratis, prezzo fisso, zero canoni surprise. Se non ti piace, non paghi.</p>
+        </article>
+        <article id="valore-2">
+          <span id="icona-valore-2"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
+          <h3>Prestazioni</h3>
+          <p>Niente WordPress, niente plugin: solo codice pulito che carica in un lampo.</p>
+        </article>
+        <article id="valore-3">
+          <span id="icona-valore-3"><i class="fa-solid fa-lock-open" aria-hidden="true"></i></span>
+          <h3>Libertà</h3>
+          <p>Il codice è tuo per sempre. Nessun lock-in: puoi portarlo dove vuoi.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta-chisiamo">
+      <h2 id="titolo-cta-chisiamo">Parliamo della tua attività</h2>
+      <p id="sottotitolo-cta-chisiamo">Vogliamo conoscere te e i tuoi obiettivi. La chiacchierata è gratis, come la bozza.</p>
+      <a href="index.html#contatti" id="bottone-cta-chisiamo">Richiedi la bozza gratuita</a>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div id="footer-inner">
+      <img id="footer-logo" src="loghi/WEBNIX-Simbolo.png" alt="Simbolo Webnix">
+      <p id="footer-tagline">Siti web onesti per nuove attività.<br>HTML, CSS e JavaScript puro. Solo quello.</p>
+      <nav id="footer-links" aria-label="Link footer">
+        <a href="index.html">Home</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="faq.html">FAQ</a>
+        <a href="assistenza.html">Assistenza</a>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="contatti.html">Contatti</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html#contatti">Bozza Gratuita</a>
+      </nav>
+      <p id="footer-copy">© 2026 Webnix. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK (compat): caricato SOLO se config.js ha le chiavi vere compilate -->
+  <script>
+    fetch('config.js').then(function(r){return r.text();}).then(function(t){
+      if (!/LA_TUA_API_KEY|IL_TUO_PROGETTO/.test(t)) {
+        ['firebase-app-compat.js','firebase-database-compat.js'].forEach(function(f){
+          var s=document.createElement('script');
+          s.src='https://www.gstatic.com/firebasejs/10.12.5/'+f;
+          document.head.appendChild(s);
+        });
+      }
+    }).catch(function(){});
+  </script>
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
