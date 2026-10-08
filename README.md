@@ -1,38 +1,86 @@
-# Webnix – Sito statico (HTML + CSS + JS puro)
+# Webnix – Digital Agency
 
-⚠️ **Tecnologie usate: SOLO HTML5, CSS3 e JavaScript Vanilla. Nessun framework (niente Tailwind), nessun WordPress, nessun altro linguaggio.**
+Sito vetrina **100% statico**: solo **HTML5 + CSS vanilla + JavaScript puro**.
+Nessun framework, nessun build step, nessuna dipendenza (unica eccezione: Font Awesome via CDN per le icone, marker tecnici `fa-solid`/`fa-brands`).
 
-## File del progetto
-| File | Ruolo |
-|---|---|
-| `index.html` | Struttura semantica ID-based, tutte le 8 sezioni del funnel (Problema → Agitazione → Soluzione → Azione) |
-| `style.css` | Design system in `:root` con la palette brand estratta (#e81cff, #40c9ff, #0d1117…). Stile prevalentemente via `#id`, responsive desktop+smartphone (breakpoint 900px / 600px) |
-| `config.js` | **Unico punto di verità**: Firebase, contatti, social, limiti recensioni (max caratteri uniformato a 1000) |
-| `script.js` | Menu mobile, scroll fluido con offset header, filtro portfolio, lettura/invio recensioni Firebase (con fallback locale demo), form contatti → WhatsApp precompilato |
+**Palette brand:** `#e81cff` (viola neon) → `#40c9ff` (ciano neon) su `#0d1117`.
+Design system centralizzato in `:root` dentro `style.css`.
 
-## Immagini richieste (da inserire nelle cartelle create)
-- `loghi/WEBNIX.png` — logo header
-- `WEBNIX-Logo-Solo-Simbolo-(1).png` — logo footer
-- `favicon.ico` (+ eventuali `favicon-96x96.png`, `favicon.svg`, `apple-touch-icon.png`)
-- `assets/images/portfolio-*.webp` — 6 immagini portfolio in **WebP** ottimizzate
-Finché le immagini mancano, il layout resta integro (le card mostrano lo spazio con fondo brand).
+---
 
-## Recensioni (Firebase Realtime Database)
-Struttura dati salvata per ogni recensione:
-```json
-{ "name": "Mario Rossi", "text": "…", "url": "", "stars": 5, "timestamp": 1762000000000 }
+## Struttura del progetto
+
 ```
-1. Compila `firebase:{...}` in `config.js` con le chiavi del tuo progetto.
-2. Se i segnaposto non vengono sostituiti, il sito mostra automaticamente 2 recensioni demo locali (senza errori in console) e **non scarica nemmeno l'SDK Firebase** (iniettato da un micro-script solo quando le chiavi sono valide).
-3. Il contatore caratteri ora è **coerente: 1000** sia nel codice che nel commento/config.
+.
+├── index.html          # Home: funnel Hero→Problema→Soluzione→Come Funziona→Servizi→Portfolio→Recensioni→Contatti→CTA→Footer
+├── servizi.html        # Dettaglio pacchetti (include/esclude trasparenti)
+├── faq.html            # Accordion nativo <details>/<summary>
+├── assistenza.html     # Pacchetti post-lancio + stato servizio + canali
+├── chi-siamo.html      # Storia e valori
+├── contatti.html       # Modulo funzionante (→ WhatsApp precompilato)
+├── admin.html          # Area riservata (demo; in prod usare Firebase Auth)
+├── style.css           # Design system :root + tutto lo stile (solo #id e attributi)
+├── script.js           # Loader, menu, reveal scroll, filtri, recensioni, form→WhatsApp
+├── config.js           # UNICO PUNTO DI VERITÀ: Firebase, contatti, social, limiti
+├── loghi/
+│   ├── WEBNIX.png          # Wordmark gradiente brand, sfondo trasparente
+│   └── WEBNIX-Simbolo.png  # Simbolo circolare per footer
+└── assets/images/          # Placeholder portfolio (sostituire con screenshot reali .webp)
+```
 
-## Regole d'oro del progetto (vincoli voluti)
-- **Solo HTML + CSS + JavaScript vanilla**: niente Tailwind, niente framework, niente build step.
-- **Zero classi CSS**: tutto lo stile passa da `#id` (o selettori di struttura/attributo come `[attivo="si"]`, `[nascosto="si"]`, `[stato="ok"]`). Lo stato del menu mobile, dei filtri portfolio, delle stelle e dei feedback è gestito con attributi HTML, mai con `classList`.
-- **Responsive by design**: breakpoint 900px (tablet) e 600px (smartphone), menu hamburger, griglie fluide, input a 16px su mobile (anti-zoom iOS).
+## Regole architetturali (vincolanti)
 
-## Social uniformati
-Instagram è **`https://www.instagram.com/webnix.it`** ovunque (JSON-LD, footer, config.js) — risolta l'incoerenza con `webnix_italia`.
+- **Zero classi proprie**: ogni stile aggancia a `#id` o a selettori di struttura/attributo
+  (`[aperto="si"]`, `[attivo="si"]`, `[visible="si"]`, `[piena="si"]`, `[stato="ok"]`, `[nascosto="si"]`,
+  `[pagina-corrente="si"]`, `[menu-aperto="si"]`, `[reveal="si"]`, `data-filtro`, `data-categoria`, `data-lista`).
+  Uniche eccezioni: i marker tecnici `fa-*` di Font Awesome.
+- Lo stato UI è sempre portato da **attributi HTML**, mai da `classList`.
+- Anti-XSS recensioni: i testi utente entrano nel DOM **solo** con `createElement` + `textContent` (mai `innerHTML`).
 
-## Deploy
-Hosting statico consigliato: **Netlify** o **GitHub Pages** (trascina la cartella / pusha il repo: funziona così com'è).
+## Configurazione Firebase (recensioni reali)
+
+1. Crea un progetto su [Firebase Console](https://console.firebase.google.com/) → **Realtime Database**.
+2. In `config.js` sostituisci i segnaposto `LA_TUA_API_KEY` / `IL_TUO_PROGETTO` con le chiavi vere
+   (Project settings → Your apps → SDK setup).
+3. Regole database consigliate:
+
+```json
+{
+  "rules": {
+    "recensioni": { ".read": true, ".write": true }
+  }
+}
+```
+
+Finché i segnaposto restano invariati, **nessun download esterno** avviene: la sezione recensioni usa il
+**fallback demo** (2 recensioni locali + salvataggio in `localStorage`) senza errori in console.
+Limite recensione uniformato a **1000 caratteri** (leggi `WEBNIX_CONFIG.recensioni.maxCaratteri`).
+
+## Funzionalità principali
+
+| Funzione | Dove | Note |
+|---|---|---|
+| Loader globale `#global-loader2` | tutte le 7 pagine | anello `conic-gradient` viola/ciano, barra progresso fino al 100%, dissolvenza + `display:none`, scroll lock, timeout sicurezza 5s, `prefers-reduced-motion` |
+| Menu mobile | ≤900px | hamburger → drawer laterale vetro-blur + overlay scuro; chiusura tap-outside/ESC/link; scroll lock; header `fixed` z-index 110 sotto drawer (200) |
+| Hero full-bleed | index | `calc(100vh - header)` desktop, `100svh` mobile, gradiente brand −45° |
+| `#bottone1` Bozza Gratuita | hero | pillola 280×60, fondo `rgb(31,31,31)`, 3 layer animati bianco→`#17f1d1`→`#008dc7`, delay scalati `cubic-bezier(0.19,1,0.22,1)`, testo scorrevole in hover, stato `[attivo]` touch |
+| Reveal allo scroll | tutte | IntersectionObserver one-shot + `[visible="si"]`, 0.8s `cubic-bezier(0.22,1,0.36,1)`, translateY(46px)→0, delay a cascata, fallback senza IO/reduced-motion |
+| Filtri portfolio | index | attributi `data-filtro`/`data-categoria`/`[nascosto]` |
+| Recensioni | index | Firebase Realtime DB + fallback demo, contatore 1000 caratteri |
+| Form → WhatsApp | index + contatti.html | messaggio precompilato con nome, attività, email, telefono |
+| Scroll offset | tutte | `scroll-padding-top: 90px` → la CTA `#contatti` non resta sotto l'header fisso |
+
+## Test rapidi
+
+```bash
+node --check script.js && node --check config.js   # sintassi JS
+python3 -m http.server 8000                          # anteprima locale
+```
+
+## Hosting
+
+Essendo 100% statico: Netlify, GitHub Pages o Vercel. Trascina la cartella su Netlify Drop ed è online.
+
+---
+
+© 2026 Webnix – Genova · webnixit@gmail.com · [@webnix.it](https://www.instagram.com/webnix.it)
