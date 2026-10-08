@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webnix | Siti Web per Nuove Attività – Bozza Gratuita in 48 Ore</title>
+  <meta name="description" content="La tua attività non è su Google? Webnix crea siti web professionali per nuove attività, senza costi nascosti e senza WordPress. Bozza gratuita in 48 ore, paghi solo se ti piace.">
+  <meta property="og:title" content="Webnix | Il tuo sito web professionale in 48 ore">
+  <meta property="og:description" content="Bozza gratuita in 48 ore. Paghi solo se ti piace. Nessun canone mensile assurdo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://webnix.it">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome: unico uso di classi esterne (marker tecnici fa-solid / fa-brands) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Dati strutturati Schema.org (SEO locale) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Webnix Digital Agency",
+    "email": "webnixit@gmail.com",
+    "telephone": "+14132259397",
+    "url": "https://webnix.it",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Genova",
+      "addressRegion": "Liguria",
+      "addressCountry": "IT"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/webnix.it",
+      "https://www.facebook.com/people/Webnix-Digital-Agency/61582890411506/"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ LOADER GLOBALE ============ -->
+  <div id="global-loader2" aria-hidden="true">
+    <div id="loader2-anello">
+      <div id="loader2-cerchio">
+        <span id="loader2-brand">WEBNIX</span>
+        <span id="loader2-tag">DIGITAL AGENCY</span>
+      </div>
+    </div>
+    <p id="loader2-testo">Caricamento in corso...</p>
+    <div id="loader2-barra"><span id="loader2-progresso"></span></div>
+  </div>
+
+  <!-- ============ OVERLAY MENU MOBILE ============ -->
+  <div id="menu-overlay"></div>
+
+  <!-- ============ HEADER / NAV (fisso) ============ -->
+  <header id="header">
+    <div id="header-inner">
+      <a href="index.html" id="logo-link" aria-label="Webnix - torna alla home">
+        <img id="logo-img" src="loghi/WEBNIX.png" alt="Logo Webnix">
+      </a>
+      <nav id="nav-desktop" aria-label="Navigazione principale">
+        <a href="index.html" id="link-home">Home</a>
+        <a href="servizi.html" id="link-servizi">Servizi</a>
+        <a href="faq.html" id="link-faq">FAQ</a>
+        <a href="assistenza.html" id="link-assistenza">Assistenza</a>
+        <a href="chi-siamo.html" id="link-chisiamo">Chi Siamo</a>
+        <a href="contatti.html" id="link-contatti">Contatti</a>
+        <a href="admin.html" id="link-admin">Admin</a>
+        <a href="index.html#contatti" id="nav-cta">Bozza Gratuita</a>
+      </nav>
+      <button id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+        <span id="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ DRAWER MOBILE ============ -->
+  <nav id="nav-mobile" aria-label="Navigazione mobile">
+    <a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+    <a href="servizi.html"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Servizi</a>
+    <a href="faq.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQ</a>
+    <a href="assistenza.html"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Assistenza</a>
+    <a href="chi-siamo.html"><i class="fa-solid fa-users" aria-hidden="true"></i> Chi Siamo</a>
+    <a href="contatti.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contatti</a>
+    <a href="admin.html"><i class="fa-solid fa-lock" aria-hidden="true"></i> Admin</a>
+    <a href="index.html#contatti" id="nav-mobile-cta">Bozza Gratuita</a>
+  </nav>
+
+  <main>
+
+    <!-- ============ 1. HERO (full-bleed a tutto schermo) ============ -->
+    <section id="hero">
+      <div id="hero-content">
+        <h1 id="hero-title">La tua attività non è su Google?<br>
+          <span id="hero-highlight">I tuoi clienti ti stanno cercando,<br>ma stanno trovando i tuoi concorrenti.</span>
+        </h1>
+        <p id="hero-sub">Aiutiamo le <strong>nuove attività</strong> a ottenere una presenza digitale professionale,
+          <strong>senza costi nascosti</strong> e senza la complessità di WordPress o Wix.
+          Ottieni una <strong>bozza gratuita del tuo sito in 48 ore</strong>.</p>
+        <div id="hero-buttons">
+          <a href="#contatti" id="bottone1">
+            <span id="bottone1-layer1"></span>
+            <span id="bottone1-layer2"></span>
+            <span id="bottone1-layer3"></span>
+            <span id="bottone1-testo-a">Bozza gratis in 48h</span>
+            <span id="bottone1-testo-b">Bozza gratis in 48h →</span>
+          </a>
+          <a href="#come-funziona" id="bottone2">Vedi come funziona</a>
+        </div>
+        <p id="hero-trust">✔ Nessuna spesa obbligatoria &nbsp; ✔ Bozza in 48 ore &nbsp; ✔ Paghi solo se approvi</p>
+      </div>
+    </section>
+
+    <!-- ============ 2. IL PROBLEMA ============ -->
+    <section id="problema">
+      <h2 id="titolo-problema">Riconosci la tua situazione?</h2>
+      <p id="sottotitolo-problema">Ecco cosa succede ogni giorno a chi apre un'attività senza un vero sito web.</p>
+      <div id="problema-grid">
+        <article id="card-problema-1">
+          <span id="icona-problema-1"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+          <h3>Invisibile su Google Maps</h3>
+          <p>Chi ti cerca nella tua zona trova prima i tuoi concorrenti. Ogni giorno perdi clienti che avevano bisogno proprio di te.</p>
+        </article>
+        <article id="card-problema-2">
+          <span id="icona-problema-2"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></span>
+          <h3>Ospite dei social</h3>
+          <p>Un cambio di algoritmo, un blocco dell'account e il tuo lavoro svanisce. I social sono in affitto: il sito web è tuo.</p>
+        </article>
+        <article id="card-problema-3">
+          <span id="icona-problema-3"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span>
+          <h3>Credibilità a rischio</h3>
+          <p>Oggi un'attività senza sito web solleva dubbi sulla sua professionalità. I clienti controllano online prima di scegliere.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 3. LA SOLUZIONE ============ -->
+    <section id="soluzione">
+      <h2 id="titolo-soluzione">La soluzione: <span id="soluzione-brand">Webnix</span></h2>
+      <p id="sottotitolo-soluzione">Siti statici in HTML, CSS e JavaScript puro. Niente WordPress, niente canoni nascosti.</p>
+      <div id="confronto">
+        <div id="confronto-altri">
+          <h3><i class="fa-solid fa-xmark" aria-hidden="true"></i> WordPress / Wix / Shopify</h3>
+          <ul>
+            <li>Canoni mensili e rinnovi che salgono nel tempo</li>
+            <li>Lenti: plugin pesanti e tempi di caricamento infiniti</li>
+            <li>Sicurezza fragile: aggiornamenti costanti, rischi di hackeraggi</li>
+            <li>Il sito resta "in affitto" alla piattaforma</li>
+            <li>Costi nascosti: temi, estensioni, assistenza a pagamento</li>
+          </ul>
+        </div>
+        <div id="confronto-noi">
+          <h3><i class="fa-solid fa-check" aria-hidden="true"></i> Con Webnix</h3>
+          <ul>
+            <li><strong>Nessun canone mensile assurdo</strong>: paghi una volta</li>
+            <li><strong>Codice pulito e velocissimo</strong>: ottimo per SEO e utenti</li>
+            <li>Sicurezza naturale: nessun database da violare</li>
+            <li><strong>Il codice è tuo, per sempre</strong>: piena proprietà</li>
+            <li>Trasparenza totale: sai esattamente cosa paghi</li>
+          </ul>
+        </div>
+      </div>
+      <p id="soluzione-note">Tecnologie usate: <strong>HTML5 semantico, CSS moderno e JavaScript Vanilla</strong>. Solo questi. Massime prestazioni, zero dipendenze.</p>
+    </section>
+
+    <!-- ============ 4. COME FUNZIONA ============ -->
+    <section id="come-funziona">
+      <h2 id="titolo-comefunziona">Come funziona</h2>
+      <p id="sottotitolo-comefunziona">Quattro passi semplici. Rischio zero.</p>
+      <div id="timeline">
+        <div id="step-1">
+          <span id="step-num-1">1</span>
+          <h3>Compila il modulo</h3>
+          <p>Due minuti: nome attività, zona e i tuoi riferimenti.</p>
+        </div>
+        <div id="step-2">
+          <span id="step-num-2">2</span>
+          <h3>Ricevi la bozza</h3>
+          <p>In 48 ore ti mostriamo una bozza gratuita del tuo sito.</p>
+        </div>
+        <div id="step-3">
+          <span id="step-num-3">3</span>
+          <h3>Approvi e sviluppiamo</h3>
+          <p>Modifichiamo insieme finché non ti convince al 100%.</p>
+        </div>
+        <div id="step-4">
+          <span id="step-num-4">4</span>
+          <h3>Paghi solo alla fine</h3>
+          <p>Se la bozza non ti piace, non paghi nulla. Fine.</p>
+        </div>
+      </div>
+      <a href="#contatti" id="bottone-timeline">Inizia ora: è gratis</a>
+    </section>
+
+    <!-- ============ 5. SERVIZI ============ -->
+    <section id="servizi">
+      <h2 id="titolo-servizi">I nostri servizi</h2>
+      <p id="sottotitolo-servizi">Trasparenza radicale: cosa include ogni pacchetto, e cosa no.</p>
+      <div id="servizi-grid">
+
+        <article id="card-servizio-base">
+          <span id="badge-piu-scelto">Il più scelto</span>
+          <h3>Sito Web Base</h3>
+          <p id="servizio-base-prezzo">Da preventivo chiaro e fisso</p>
+          <ul id="lista-include-1">
+            <li>✔ Sito statico 1-3 pagine (HTML + CSS + JS)</li>
+            <li>✔ Design responsive (desktop e smartphone)</li>
+            <li>✔ Velocità ottimizzata e SEO di base</li>
+            <li>✔ Modulo contatti + link WhatsApp</li>
+            <li>✔ Codice di tua proprietà, per sempre</li>
+          </ul>
+          <ul id="lista-esclude-2" data-lista="esclude">
+            <li>✘ NON include gestione contenuti tipo WordPress</li>
+            <li>✘ NON include canone mensile obbligatorio</li>
+          </ul>
+          <a href="contatti.html" id="btn-servizio-base">Richiedi la bozza</a>
+        </article>
+
+        <article id="card-servizio-completo">
+          <h3>Sito Web Completo</h3>
+          <p id="servizio-completo-prezzo">Da preventivo chiaro e fisso</p>
+          <ul id="lista-include-3">
+            <li>✔ Tutto ciò che include il piano Base</li>
+            <li>✔ Pagine illimitate e blog leggero</li>
+            <li>✔ Setup Google Business Profile (Maps)</li>
+            <li>✔ Analisi SEO e copy orientato alla conversione</li>
+            <li>✔ Hosting statico su Netlify o GitHub Pages</li>
+          </ul>
+          <a href="contatti.html" id="btn-servizio-completo">Parliamone</a>
+        </article>
+
+        <article id="card-servizio-brand">
+          <h3>Logo & Immagine Coordinata</h3>
+          <p id="servizio-brand-prezzo">Da preventivo chiaro e fisso</p>
+          <ul id="lista-include-4">
+            <li>✔ Logo professionale + varianti (scuro/chiaro)</li>
+            <li>✔ Palette colori e font del brand</li>
+            <li>✔ File pronti per web e stampa</li>
+          </ul>
+          <a href="contatti.html" id="btn-servizio-brand">Parliamone</a>
+        </article>
+
+        <article id="card-servizio-deploy">
+          <h3>Deploy & Messa Online</h3>
+          <p id="servizio-deploy-prezzo">Prezzo onesto, una tantum</p>
+          <ul id="lista-include-5">
+            <li>✔ Pubblicazione su Netlify / GitHub Pages</li>
+            <li>✔ Dominio configurato con HTTPS</li>
+            <li>✔ Ottimizzazione performance finale</li>
+          </ul>
+          <a href="contatti.html" id="btn-servizio-deploy">Metti online il sito</a>
+        </article>
+
+      </div>
+      <p id="servizi-more"><a href="servizi.html">VEDI TUTTI I DETTAGLI DEI SERVIZI <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a></p>
+    </section>
+
+    <!-- ============ 6. PORTFOLIO ============ -->
+    <section id="portfolio">
+      <h2 id="titolo-portfolio">Portfolio</h2>
+      <p id="sottotitolo-portfolio">Lavori reali. Filtra per categoria.</p>
+      <div id="filtri-portfolio">
+        <button id="filtro-tutti" data-filtro="tutti" attivo="si">Tutti</button>
+        <button id="filtro-siti" data-filtro="siti">Siti Web</button>
+        <button id="filtro-loghi" data-filtro="loghi">Loghi</button>
+        <button id="filtro-grafica" data-filtro="grafica">Grafica</button>
+      </div>
+      <div id="portfolio-grid">
+        <figure id="work-1" data-categoria="siti">
+          <img id="img-work-1" src="assets/images/portfolio-sito-1.webp" alt="Screenshot di un sito web realizzato da Webnix" loading="lazy">
+          <figcaption>Sito vetrina per nuova attività locale</figcaption>
+        </figure>
+        <figure id="work-2" data-categoria="siti">
+          <img id="img-work-2" src="assets/images/portfolio-sito-2.webp" alt="Landing page responsive realizzata da Webnix" loading="lazy">
+          <figcaption>Landing page ad alta conversione</figcaption>
+        </figure>
+        <figure id="work-3" data-categoria="loghi">
+          <img id="img-work-3" src="assets/images/portfolio-logo-1.webp" alt="Logo progettato da Webnix" loading="lazy">
+          <figcaption>Identity completa per startup</figcaption>
+        </figure>
+        <figure id="work-4" data-categoria="loghi">
+          <img id="img-work-4" src="assets/images/portfolio-logo-2.webp" alt="Mark design realizzato da Webnix" loading="lazy">
+          <figcaption>Logo minimal per studio professionale</figcaption>
+        </figure>
+        <figure id="work-5" data-categoria="grafica">
+          <img id="img-work-5" src="assets/images/portfolio-grafica-1.webp" alt="Grafica social realizzata da Webnix" loading="lazy">
+          <figcaption>Kit grafica social coordinata</figcaption>
+        </figure>
+        <figure id="work-6" data-categoria="grafica">
+          <img id="img-work-6" src="assets/images/portfolio-grafica-2.webp" alt="Brochure stampata progettata da Webnix" loading="lazy">
+          <figcaption>Brochure e materiale stampato</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ 7. RECENSIONI ============ -->
+    <section id="recensioni">
+      <h2 id="titolo-recensioni">Cosa dicono i clienti</h2>
+      <p id="sottotitolo-recensioni">Le recensioni sono salvate nel nostro database e aggiornate in tempo reale.</p>
+
+      <div id="recensioni-loader" hidden>Caricamento recensioni…</div>
+      <div id="recensioni-vuote" hidden>Nessuna recensione ancora. Lascia per primo la tua!</div>
+
+      <div id="lista-recensioni"><!-- Riempiuto da script.js --></div>
+
+      <!-- Form per lasciare una recensione -->
+      <form id="form-recensione" novalidate>
+        <h3>Lascia la tua recensione</h3>
+        <label for="rev-nome">Nome</label>
+        <input type="text" id="rev-nome" name="nome" placeholder="Mario Rossi" maxlength="60" required>
+
+        <label for="rev-url">Sito o social (facoltativo)</label>
+        <input type="url" id="rev-url" name="url" placeholder="https://esempio.it">
+
+        <label id="rev-stelle-label">Valutazione</label>
+        <div id="rev-stelle" role="radiogroup" aria-label="Numero di stelle">
+          <button type="button" id="stella-1" data-valore="1" aria-label="1 stella">★</button>
+          <button type="button" id="stella-2" data-valore="2" aria-label="2 stelle">★</button>
+          <button type="button" id="stella-3" data-valore="3" aria-label="3 stelle">★</button>
+          <button type="button" id="stella-4" data-valore="4" aria-label="4 stelle">★</button>
+          <button type="button" id="stella-5" data-valore="5" aria-label="5 stelle">★</button>
+        </div>
+
+        <label for="rev-testo">La tua esperienza</label>
+        <textarea id="rev-testo" name="testo" rows="4" maxlength="1000" placeholder="Racconta com'è andata…" required></textarea>
+        <p id="rev-contatore">1000 caratteri disponibili</p>
+
+        <button type="submit" id="rev-submit">Pubblica recensione</button>
+        <p id="rev-feedback" role="status"></p>
+      </form>
+    </section>
+
+    <!-- ============ 8. CONTATTI / CTA FINALE ============ -->
+    <section id="contatti">
+      <h2 id="titolo-contatti">Smetti di perdere clienti oggi stesso.<br>Parliamo del tuo progetto.</h2>
+      <p id="sottotitolo-contatti">Compila il modulo: riceverai la tua bozza gratuita entro 48 ore.</p>
+
+      <div id="contatti-grid">
+        <div id="contatti-info">
+          <h3>I nostri recapiti</h3>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:webnixit@gmail.com">webnixit@gmail.com</a></p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+14132259397">+1 413 225 9397</a></p>
+          <p><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/14132259397?text=Ciao%20Webnix!%20Vorrei%20la%20bozza%20gratuita%20del%20mio%20sito." target="_blank" rel="noopener">Scrivici su WhatsApp</a></p>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Genova, Liguria – Lunedì/Venerdì 9:00–18:00</p>
+          <div id="social-links">
+            <a href="https://www.instagram.com/webnix.it" target="_blank" rel="noopener" aria-label="Instagram Webnix"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
+            <a href="https://www.facebook.com/people/Webnix-Digital-Agency/61582890411506/" target="_blank" rel="noopener" aria-label="Facebook Webnix"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a>
+          </div>
+        </div>
+
+        <form id="form-contatti" novalidate>
+          <label for="ct-nome">Nome e cognome *</label>
+          <input type="text" id="ct-nome" name="nome" placeholder="Il tuo nome" required>
+
+          <label for="ct-attivita">Nome attività</label>
+          <input type="text" id="ct-attivita" name="attivita" placeholder="Es. Bar Roma">
+
+          <label for="ct-email">Email *</label>
+          <input type="email" id="ct-email" name="email" placeholder="tu@email.it" required>
+
+          <label for="ct-telefono">Telefono / WhatsApp *</label>
+          <input type="tel" id="ct-telefono" name="telefono" placeholder="+39 3xx xxx xxxx" required>
+
+          <label for="ct-messaggio">Di cosa hai bisogno?</label>
+          <textarea id="ct-messaggio" name="messaggio" rows="4" placeholder="Es. Ho appena aperto una pizzeria e non ho un sito…"></textarea>
+
+          <button type="submit" id="glow-button">
+            <span id="glow-top"></span>
+            <span id="glow-bottom"></span>
+            <span id="glow-left"></span>
+            <span id="glow-right"></span>
+            Richiedi la mia bozza gratuita
+          </button>
+          <p id="ct-feedback" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="footer">
+    <div id="footer-inner">
+      <img id="footer-logo" src="loghi/WEBNIX-Simbolo.png" alt="Simbolo Webnix">
+      <p id="footer-tagline">Siti web onesti per nuove attività.<br>HTML, CSS e JavaScript puro. Solo quello.</p>
+      <nav id="footer-links" aria-label="Link footer">
+        <a href="index.html">Home</a>
+        <a href="servizi.html">Servizi</a>
+        <a href="faq.html">FAQ</a>
+        <a href="assistenza.html">Assistenza</a>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="contatti.html">Contatti</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html#contatti">Bozza Gratuita</a>
+      </nav>
+      <p id="footer-copy">© 2026 Webnix. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK (compat): caricato SOLO se config.js ha le chiavi vere compilate.
+       Con HTML/CSS/JS puro, senza build step: un micro-script inline decide se
+       iniettare i tag <script> di Firebase. Se non configurato, nessun download
+       esterno e il sito resta 100% statico. -->
+  <script>
+    // Anticipa la lettura di config.js solo per i due tag Firebase
+    fetch('config.js').then(function(r){return r.text();}).then(function(t){
+      if (!/LA_TUA_API_KEY|IL_TUO_PROGETTO/.test(t)) {
+        ['firebase-app-compat.js','firebase-database-compat.js'].forEach(function(f){
+          var s=document.createElement('script');
+          s.src='https://www.gstatic.com/firebasejs/10.12.5/'+f;
+          document.head.appendChild(s);
+        });
+      }
+    }).catch(function(){});
+  </script>
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
