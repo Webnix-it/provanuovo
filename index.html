@@ -9,7 +9,10 @@
   <meta property="og:description" content="Bozza gratuita in 48 ore. Paghi solo se ti piace. Nessun canone mensile assurdo.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://webnix.it">
-  <link rel="icon" href="favicon.ico" sizes="any">
+  <!-- Favicon: place favicon-96x96.png / favicon.svg / favicon.ico / apple-touch-icon.png in the project root -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 
   <!-- Dati strutturati Schema.org (SEO locale) -->
@@ -49,12 +52,12 @@
         <img id="logo-img" src="loghi/WEBNIX.png" alt="Logo Webnix">
       </a>
       <nav id="nav-desktop" aria-label="Navigazione principale">
-        <a href="#problema" class="nav-link">Il Problema</a>
-        <a href="#soluzione" class="nav-link">Soluzione</a>
-        <a href="#come-funziona" class="nav-link">Come Funziona</a>
-        <a href="#servizi" class="nav-link">Servizi</a>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#recensioni" class="nav-link">Recensioni</a>
+        <a href="#problema" id="link-problema">Il Problema</a>
+        <a href="#soluzione" id="link-soluzione">Soluzione</a>
+        <a href="#come-funziona" id="link-comefunziona">Come Funziona</a>
+        <a href="#servizi" id="link-servizi">Servizi</a>
+        <a href="#portfolio" id="link-portfolio">Portfolio</a>
+        <a href="#recensioni" id="link-recensioni">Recensioni</a>
         <a href="#contatti" id="nav-cta">Bozza Gratuita</a>
       </nav>
       <button id="menu-toggle" aria-label="Apri menu" aria-expanded="false">
@@ -93,21 +96,21 @@
 
     <!-- ============ 2. IL PROBLEMA ============ -->
     <section id="problema">
-      <h2 class="sezione-titolo">Riconosci la tua situazione?</h2>
-      <p class="sezione-sottotitolo">Ecco cosa succede ogni giorno a chi apre un'attività senza un vero sito web.</p>
+      <h2 id="titolo-problema">Riconosci la tua situazione?</h2>
+      <p id="sottotitolo-problema">Ecco cosa succede ogni giorno a chi apre un'attività senza un vero sito web.</p>
       <div id="problema-grid">
         <article id="card-problema-1">
-          <span class="icona-card">📍</span>
+          <span id="icona-problema-1">📍</span>
           <h3>Invisibile su Google Maps</h3>
           <p>Chi ti cerca nella tua zona trova prima i tuoi concorrenti. Ogni giorno perdi clienti che avevano bisogno proprio di te.</p>
         </article>
         <article id="card-problema-2">
-          <span class="icona-card">📱</span>
+          <span id="icona-problema-2">📱</span>
           <h3>Ospite dei social</h3>
           <p>Un cambio di algoritmo, un blocco dell'account e il tuo lavoro svanisce. I social sono in affitto: il sito web è tuo.</p>
         </article>
         <article id="card-problema-3">
-          <span class="icona-card">🤔</span>
+          <span id="icona-problema-3">🤔</span>
           <h3>Credibilità a rischio</h3>
           <p>Oggi un'attività senza sito web solleva dubbi sulla sua professionalità. I clienti controllano online prima di scegliere.</p>
         </article>
@@ -116,8 +119,8 @@
 
     <!-- ============ 3. LA SOLUZIONE ============ -->
     <section id="soluzione">
-      <h2 class="sezione-titolo">La soluzione: <span id="soluzione-brand">Webnix</span></h2>
-      <p class="sezione-sottotitolo">Siti statici in HTML, CSS e JavaScript puro. Niente WordPress, niente canoni nascosti.</p>
+      <h2 id="titolo-soluzione">La soluzione: <span id="soluzione-brand">Webnix</span></h2>
+      <p id="sottotitolo-soluzione">Siti statici in HTML, CSS e JavaScript puro. Niente WordPress, niente canoni nascosti.</p>
       <div id="confronto">
         <div id="confronto-altri">
           <h3>❌ WordPress / Wix / Shopify</h3>
@@ -145,26 +148,26 @@
 
     <!-- ============ 4. COME FUNZIONA ============ -->
     <section id="come-funziona">
-      <h2 class="sezione-titolo">Come funziona</h2>
-      <p class="sezione-sottotitolo">Quattro passi semplici. Rischio zero.</p>
+      <h2 id="titolo-comefunziona">Come funziona</h2>
+      <p id="sottotitolo-comefunziona">Quattro passi semplici. Rischio zero.</p>
       <div id="timeline">
-        <div class="step" id="step-1">
-          <span class="step-num">1</span>
+        <div id="step-1">
+          <span id="step-num-1">1</span>
           <h3>Compila il modulo</h3>
           <p>Due minuti: nome attività, zona e i tuoi riferimenti.</p>
         </div>
-        <div class="step" id="step-2">
-          <span class="step-num">2</span>
+        <div id="step-2">
+          <span id="step-num-2">2</span>
           <h3>Ricevi la bozza</h3>
           <p>In 48 ore ti mostriamo una bozza gratuita del tuo sito.</p>
         </div>
-        <div class="step" id="step-3">
-          <span class="step-num">3</span>
+        <div id="step-3">
+          <span id="step-num-3">3</span>
           <h3>Approvi e sviluppiamo</h3>
           <p>Modifichiamo insieme finché non ti convince al 100%.</p>
         </div>
-        <div class="step" id="step-4">
-          <span class="step-num">4</span>
+        <div id="step-4">
+          <span id="step-num-4">4</span>
           <h3>Paghi solo alla fine</h3>
           <p>Se la bozza non ti piace, non paghi nulla. Fine.</p>
         </div>
@@ -174,61 +177,61 @@
 
     <!-- ============ 5. SERVIZI ============ -->
     <section id="servizi">
-      <h2 class="sezione-titolo">I nostri servizi</h2>
-      <p class="sezione-sottotitolo">Trasparenza radicale: cosa include ogni pacchetto, e cosa no.</p>
+      <h2 id="titolo-servizi">I nostri servizi</h2>
+      <p id="sottotitolo-servizi">Trasparenza radicale: cosa include ogni pacchetto, e cosa no.</p>
       <div id="servizi-grid">
 
         <article id="card-servizio-base">
           <span id="badge-piu-scelto">Il più scelto</span>
           <h3>Sito Web Base</h3>
           <p id="servizio-base-prezzo">Da preventivo chiaro e fisso</p>
-          <ul class="include">
+          <ul id="lista-include-1">
             <li>✔ Sito statico 1-3 pagine (HTML + CSS + JS)</li>
             <li>✔ Design responsive (desktop e smartphone)</li>
             <li>✔ Velocità ottimizzata e SEO di base</li>
             <li>✔ Modulo contatti + link WhatsApp</li>
             <li>✔ Codice di tua proprietà, per sempre</li>
           </ul>
-          <ul class="esclude">
+          <ul id="lista-esclude-2" data-lista="esclude">
             <li>✘ NON include gestione contenuti tipo WordPress</li>
             <li>✘ NON include canone mensile obbligatorio</li>
           </ul>
-          <a href="#contatti" class="btn-servizio">Richiedi la bozza</a>
+          <a href="#contatti" id="btn-servizio-base">Richiedi la bozza</a>
         </article>
 
         <article id="card-servizio-completo">
           <h3>Sito Web Completo</h3>
           <p id="servizio-completo-prezzo">Da preventivo chiaro e fisso</p>
-          <ul class="include">
+          <ul id="lista-include-3">
             <li>✔ Tutto ciò che include il piano Base</li>
             <li>✔ Pagine illimitate e blog leggero</li>
             <li>✔ Setup Google Business Profile (Maps)</li>
             <li>✔ Analisi SEO e copy orientato alla conversione</li>
             <li>✔ Hosting statico su Netlify o GitHub Pages</li>
           </ul>
-          <a href="#contatti" class="btn-servizio">Richiedi la bozza</a>
+          <a href="#contatti" id="btn-servizio-completo">Richiedi la bozza</a>
         </article>
 
         <article id="card-servizio-brand">
           <h3>Logo & Immagine Coordinata</h3>
           <p id="servizio-brand-prezzo">Da preventivo chiaro e fisso</p>
-          <ul class="include">
+          <ul id="lista-include-4">
             <li>✔ Logo professionale + varianti (scuro/chiaro)</li>
             <li>✔ Palette colori e font del brand</li>
             <li>✔ File pronti per web e stampa</li>
           </ul>
-          <a href="#contatti" class="btn-servizio">Parliamone</a>
+          <a href="#contatti" id="btn-servizio-brand">Parliamone</a>
         </article>
 
         <article id="card-servizio-deploy">
           <h3>Deploy & Messa Online</h3>
           <p id="servizio-deploy-prezzo">Prezzo onesto, una tantum</p>
-          <ul class="include">
+          <ul id="lista-include-5">
             <li>✔ Pubblicazione su Netlify / GitHub Pages</li>
             <li>✔ Dominio configurato con HTTPS</li>
             <li>✔ Ottimizzazione performance finale</li>
           </ul>
-          <a href="#contatti" class="btn-servizio">Metti online il sito</a>
+          <a href="#contatti" id="btn-servizio-deploy">Metti online il sito</a>
         </article>
 
       </div>
@@ -236,37 +239,37 @@
 
     <!-- ============ 6. PORTFOLIO ============ -->
     <section id="portfolio">
-      <h2 class="sezione-titolo">Portfolio</h2>
-      <p class="sezione-sottotitolo">Lavori reali. Filtra per categoria.</p>
+      <h2 id="titolo-portfolio">Portfolio</h2>
+      <p id="sottotitolo-portfolio">Lavori reali. Filtra per categoria.</p>
       <div id="filtri-portfolio">
-        <button class="filtro attivo" data-filtro="tutti">Tutti</button>
-        <button class="filtro" data-filtro="siti">Siti Web</button>
-        <button class="filtro" data-filtro="loghi">Loghi</button>
-        <button class="filtro" data-filtro="grafica">Grafica</button>
+        <button id="filtro-tutti" data-filtro="tutti" attivo="si">Tutti</button>
+        <button id="filtro-siti" data-filtro="siti">Siti Web</button>
+        <button id="filtro-loghi" data-filtro="loghi">Loghi</button>
+        <button id="filtro-grafica" data-filtro="grafica">Grafica</button>
       </div>
       <div id="portfolio-grid">
-        <figure class="work" data-categoria="siti">
-          <img src="assets/images/portfolio-sito-1.webp" alt="Screenshot di un sito web realizzato da Webnix" loading="lazy">
+        <figure id="work-1" data-categoria="siti">
+          <img id="img-work-1" src="assets/images/portfolio-sito-1.webp" alt="Screenshot di un sito web realizzato da Webnix" loading="lazy">
           <figcaption>Sito vetrina per nuova attività locale</figcaption>
         </figure>
-        <figure class="work" data-categoria="siti">
-          <img src="assets/images/portfolio-sito-2.webp" alt="Landing page responsive realizzata da Webnix" loading="lazy">
+        <figure id="work-2" data-categoria="siti">
+          <img id="img-work-2" src="assets/images/portfolio-sito-2.webp" alt="Landing page responsive realizzata da Webnix" loading="lazy">
           <figcaption>Landing page ad alta conversione</figcaption>
         </figure>
-        <figure class="work" data-categoria="loghi">
-          <img src="assets/images/portfolio-logo-1.webp" alt="Logo progettato da Webnix" loading="lazy">
+        <figure id="work-3" data-categoria="loghi">
+          <img id="img-work-3" src="assets/images/portfolio-logo-1.webp" alt="Logo progettato da Webnix" loading="lazy">
           <figcaption>Identity completa per startup</figcaption>
         </figure>
-        <figure class="work" data-categoria="loghi">
-          <img src="assets/images/portfolio-logo-2.webp" alt="Mark design realizzato da Webnix" loading="lazy">
+        <figure id="work-4" data-categoria="loghi">
+          <img id="img-work-4" src="assets/images/portfolio-logo-2.webp" alt="Mark design realizzato da Webnix" loading="lazy">
           <figcaption>Logo minimal per studio professionale</figcaption>
         </figure>
-        <figure class="work" data-categoria="grafica">
-          <img src="assets/images/portfolio-grafica-1.webp" alt="Grafica social realizzata da Webnix" loading="lazy">
+        <figure id="work-5" data-categoria="grafica">
+          <img id="img-work-5" src="assets/images/portfolio-grafica-1.webp" alt="Grafica social realizzata da Webnix" loading="lazy">
           <figcaption>Kit grafica social coordinata</figcaption>
         </figure>
-        <figure class="work" data-categoria="grafica">
-          <img src="assets/images/portfolio-grafica-2.webp" alt="Brochure stampata progettata da Webnix" loading="lazy">
+        <figure id="work-6" data-categoria="grafica">
+          <img id="img-work-6" src="assets/images/portfolio-grafica-2.webp" alt="Brochure stampata progettata da Webnix" loading="lazy">
           <figcaption>Brochure e materiale stampato</figcaption>
         </figure>
       </div>
@@ -274,8 +277,8 @@
 
     <!-- ============ 7. RECENSIONI ============ -->
     <section id="recensioni">
-      <h2 class="sezione-titolo">Cosa dicono i clienti</h2>
-      <p class="sezione-sottotitolo">Le recensioni sono salvate nel nostro database e aggiornate in tempo reale.</p>
+      <h2 id="titolo-recensioni">Cosa dicono i clienti</h2>
+      <p id="sottotitolo-recensioni">Le recensioni sono salvate nel nostro database e aggiornate in tempo reale.</p>
 
       <div id="recensioni-loader" hidden>Caricamento recensioni…</div>
       <div id="recensioni-vuote" hidden>Nessuna recensione ancora. Lascia per primo la tua!</div>
@@ -293,11 +296,11 @@
 
         <label id="rev-stelle-label">Valutazione</label>
         <div id="rev-stelle" role="radiogroup" aria-label="Numero di stelle">
-          <button type="button" class="stella" data-valore="1" aria-label="1 stella">★</button>
-          <button type="button" class="stella" data-valore="2" aria-label="2 stelle">★</button>
-          <button type="button" class="stella" data-valore="3" aria-label="3 stelle">★</button>
-          <button type="button" class="stella" data-valore="4" aria-label="4 stelle">★</button>
-          <button type="button" class="stella" data-valore="5" aria-label="5 stelle">★</button>
+          <button type="button" id="stella-1" data-valore="1" aria-label="1 stella">★</button>
+          <button type="button" id="stella-2" data-valore="2" aria-label="2 stelle">★</button>
+          <button type="button" id="stella-3" data-valore="3" aria-label="3 stelle">★</button>
+          <button type="button" id="stella-4" data-valore="4" aria-label="4 stelle">★</button>
+          <button type="button" id="stella-5" data-valore="5" aria-label="5 stelle">★</button>
         </div>
 
         <label for="rev-testo">La tua esperienza</label>
@@ -311,8 +314,8 @@
 
     <!-- ============ 8. CONTATTI / CTA FINALE ============ -->
     <section id="contatti">
-      <h2 class="sezione-titolo">Smetti di perdere clienti oggi stesso.<br>Parliamo del tuo progetto.</h2>
-      <p class="sezione-sottotitolo">Compila il modulo: riceverai la tua bozza gratuita entro 48 ore.</p>
+      <h2 id="titolo-contatti">Smetti di perdere clienti oggi stesso.<br>Parliamo del tuo progetto.</h2>
+      <p id="sottotitolo-contatti">Compila il modulo: riceverai la tua bozza gratuita entro 48 ore.</p>
 
       <div id="contatti-grid">
         <div id="contatti-info">
@@ -344,10 +347,10 @@
           <textarea id="ct-messaggio" name="messaggio" rows="4" placeholder="Es. Ho appena aperto una pizzeria e non ho un sito…"></textarea>
 
           <button type="submit" id="glow-button">
-            <span class="glow-line glow-top"></span>
-            <span class="glow-line glow-bottom"></span>
-            <span class="glow-line glow-left"></span>
-            <span class="glow-line glow-right"></span>
+            <span id="glow-top"></span>
+            <span id="glow-bottom"></span>
+            <span id="glow-left"></span>
+            <span id="glow-right"></span>
             Richiedi la mia bozza gratuita
           </button>
           <p id="ct-feedback" role="status"></p>
@@ -372,9 +375,22 @@
     </div>
   </footer>
 
-  <!-- Firebase SDK (compat) per le recensioni: rimosso automaticamente se config.js non è compilato -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js" defer></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js" defer></script>
+  <!-- Firebase SDK (compat): caricato SOLO se config.js ha le chiavi vere compilate.
+       Con HTML/CSS/JS puro, senza build step: un micro-script inline (3 righe)
+       decide se iniettare i tag <script> di Firebase. Se non configurato,
+       nessun download esterno e il sito resta 100% statico. -->
+  <script>
+    // Anticipa la lettura di config.js solo per i due tag Firebase
+    fetch('config.js').then(function(r){return r.text();}).then(function(t){
+      if (!/LA_TUA_API_KEY|IL_TUO_PROGETTO/.test(t)) {
+        ['firebase-app-compat.js','firebase-database-compat.js'].forEach(function(f){
+          var s=document.createElement('script');
+          s.src='https://www.gstatic.com/firebasejs/10.12.5/'+f;
+          document.head.appendChild(s);
+        });
+      }
+    }).catch(function(){});
+  </script>
   <script src="config.js" defer></script>
   <script src="script.js" defer></script>
 </body>

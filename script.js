@@ -28,21 +28,27 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const nav    = $("#nav-mobile");
   if (!toggle || !nav) return;
 
+  function chiudiMenu() {
+    nav.removeAttribute("aperto");
+    toggle.removeAttribute("aperto");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Apri menu");
+  }
+
   toggle.addEventListener("click", () => {
-    const aperto = nav.classList.toggle("visible");
-    toggle.classList.toggle("aperto", aperto);
-    toggle.setAttribute("aria-expanded", String(aperto));
-    toggle.setAttribute("aria-label", aperto ? "Chiudi menu" : "Apri menu");
+    const aperto = toggle.getAttribute("aperto") !== "si";
+    if (aperto) {
+      nav.setAttribute("aperto", "si");
+      toggle.setAttribute("aperto", "si");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Chiudi menu");
+    } else {
+      chiudiMenu();
+    }
   });
 
   // Chiude il menu quando si clicca un link
-  $$("a", nav).forEach(link =>
-    link.addEventListener("click", () => {
-      nav.classList.remove("visible");
-      toggle.classList.remove("aperto");
-      toggle.setAttribute("aria-expanded", "false");
-    })
-  );
+  $$("a", nav).forEach(link => link.addEventListener("click", chiudiMenu));
 })();
 
 /* ------------------------------------------------------------
@@ -73,19 +79,26 @@ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
    3. FILTRO PORTFOLIO
 ------------------------------------------------------------ */
 (function initFiltroPortfolio() {
-  const botoni = $$("#filtri-portfolio .filtro");
-  const works  = $$("#portfolio-grid .work");
+  const botoni = [
+    $("#filtro-tutti"), $("#filtro-siti"),
+    $("#filtro-loghi"), $("#filtro-grafica")
+  ].filter(Boolean);
+  const works = [
+    $("#work-1"), $("#work-2"), $("#work-3"),
+    $("#work-4"), $("#work-5"), $("#work-6")
+  ].filter(Boolean);
   if (!botoni.length || !works.length) return;
 
   botoni.forEach(btn => {
     btn.addEventListener("click", () => {
-      botoni.forEach(b => b.classList.remove("attivo"));
-      btn.classList.add("attivo");
+      botoni.forEach(b => b.removeAttribute("attivo"));
+      btn.setAttribute("attivo", "si");
 
       const filtro = btn.dataset.filtro; // "tutti" | "siti" | "loghi" | "grafica"
       works.forEach(w => {
         const mostra = filtro === "tutti" || w.dataset.categoria === filtro;
-        w.classList.toggle("nascosto", !mostra);
+        if (mostra) w.removeAttribute("nascosto");
+        else w.setAttribute("nascosto", "si");
       });
     });
   });
@@ -133,32 +146,43 @@ function formattaData(ts) {
 }
 
 function creaCardRecensione(r) {
+  /* Costruita solo con createElement: nessuna classe, lo stile
+     arriva da style.css tramite la struttura sotto #lista-recensioni */
   const card = document.createElement("article");
-  card.className = "recensione";
 
   const nome = (r.name || "Anonimo").trim();
   const iniziale = nome.charAt(0).toUpperCase();
   const stelle = Math.max(1, Math.min(5, parseInt(r.stars, 10) || 5));
-  const testo = (r.text || "").replace(/</g, "&lt;").slice(0, MAX_CARATTERI);
+  const testo = (r.text || "").slice(0, MAX_CARATTERI);
 
-  card.innerHTML = `
-    <div class="rev-header">
-      <span class="rev-avatar">${iniziale}</span>
-      <div>
-        <div class="rev-nome"></div>
-        <div class="rev-data">${formattaData(r.timestamp)}</div>
-      </div>
-    </div>
-    <div class="rev-stars">${"★".repeat(stelle)}${"☆".repeat(5 - stelle)}</div>
-    <p class="rev-testo"></p>
-  `;
-  // Sicurezza: nome e testo inseriti come testo, non come HTML
-  $(".rev-nome", card).textContent = nome;
-  $(".rev-testo", card).textContent = testo;
+  // Header: avatar + nome + data
+  const header = document.createElement("div");
+  const avatar = document.createElement("span");
+  avatar.textContent = iniziale;
+  const info = document.createElement("div");
+  const elNome = document.createElement("div");
+  elNome.textContent = nome;              // testo puro, sicuro
+  const elData = document.createElement("div");
+  elData.textContent = formattaData(r.timestamp);
+  info.appendChild(elNome);
+  info.appendChild(elData);
+  header.appendChild(avatar);
+  header.appendChild(info);
+
+  // Stelle
+  const elStelle = document.createElement("div");
+  elStelle.textContent = "★".repeat(stelle) + "☆".repeat(5 - stelle);
+
+  // Testo
+  const elTesto = document.createElement("p");
+  elTesto.textContent = testo;            // testo puro, sicuro
+
+  card.appendChild(header);
+  card.appendChild(elStelle);
+  card.appendChild(elTesto);
 
   if (r.url) {
     const link = document.createElement("a");
-    link.className = "rev-link";
     link.href = r.url;
     link.target = "_blank";
     link.rel = "noopener";
@@ -234,13 +258,15 @@ function svuotaEInserisci(recs) {
   testoInput.addEventListener("input", aggiornaContatore);
   aggiornaContatore();
 
-  // Selezione stelle
+  // Selezione stelle (elementi raggiunti per id, stato via attributo)
+  const stelleEl = [1, 2, 3, 4, 5].map(i => $("#stella-" + i)).filter(Boolean);
   function disegnaStelle(n) {
-    $$(".stella", stelleBox).forEach(s => {
-      s.classList.toggle("piena", Number(s.dataset.valore) <= n);
+    stelleEl.forEach(s => {
+      if (Number(s.dataset.valore) <= n) s.setAttribute("piena", "si");
+      else s.removeAttribute("piena");
     });
   }
-  $$(".stella", stelleBox).forEach(s => {
+  stelleEl.forEach(s => {
     s.addEventListener("click", () => {
       stelleScelte = Number(s.dataset.valore);
       disegnaStelle(stelleScelte);
@@ -251,7 +277,7 @@ function svuotaEInserisci(recs) {
 
   function mostraFeedback(msg, ok) {
     feedback.textContent = msg;
-    feedback.className = ok ? "feedback-ok" : "feedback-errore";
+    feedback.setAttribute("stato", ok ? "ok" : "errore");
   }
 
   form.addEventListener("submit", (e) => {
@@ -323,11 +349,11 @@ function svuotaEInserisci(recs) {
     const tel      = $("#ct-telefono").value.trim();
     const msg      = $("#ct-messaggio").value.trim();
 
-    if (!nome) { feedback.textContent = "Inserisci il nome."; feedback.className = "feedback-errore"; return; }
+    if (!nome) { feedback.textContent = "Inserisci il nome."; feedback.setAttribute("stato", "errore"); return; }
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-      feedback.textContent = "Inserisci un'email valida."; feedback.className = "feedback-errore"; return;
+      feedback.textContent = "Inserisci un'email valida."; feedback.setAttribute("stato", "errore"); return;
     }
-    if (!tel) { feedback.textContent = "Inserisci un telefono/WhatsApp."; feedback.className = "feedback-errore"; return; }
+    if (!tel) { feedback.textContent = "Inserisci un telefono/WhatsApp."; feedback.setAttribute("stato", "errore"); return; }
 
     const testo =
       `Ciao Webnix! Vorrei la bozza gratuita.%0A%0A` +
@@ -338,7 +364,7 @@ function svuotaEInserisci(recs) {
       (msg ? `*Richiesta:* ${encodeURIComponent(msg)}` : "");
 
     feedback.textContent = "Ti stiamo aprendo WhatsApp… se non si apre, scrivici a webnixit@gmail.com";
-    feedback.className = "feedback-ok";
+    feedback.setAttribute("stato", "ok");
 
     window.open(`${whatsappUrl.split("?")[0]}?text=${testo}`, "_blank", "noopener");
     form.reset();

@@ -23,8 +23,13 @@ Struttura dati salvata per ogni recensione:
 { "name": "Mario Rossi", "text": "…", "url": "", "stars": 5, "timestamp": 1762000000000 }
 ```
 1. Compila `firebase:{...}` in `config.js` con le chiavi del tuo progetto.
-2. Se i segnaposto non vengono sostituiti, il sito mostra automaticamente 2 recensioni demo locali (senza errori in console).
+2. Se i segnaposto non vengono sostituiti, il sito mostra automaticamente 2 recensioni demo locali (senza errori in console) e **non scarica nemmeno l'SDK Firebase** (iniettato da un micro-script solo quando le chiavi sono valide).
 3. Il contatore caratteri ora è **coerente: 1000** sia nel codice che nel commento/config.
+
+## Regole d'oro del progetto (vincoli voluti)
+- **Solo HTML + CSS + JavaScript vanilla**: niente Tailwind, niente framework, niente build step.
+- **Zero classi CSS**: tutto lo stile passa da `#id` (o selettori di struttura/attributo come `[attivo="si"]`, `[nascosto="si"]`, `[stato="ok"]`). Lo stato del menu mobile, dei filtri portfolio, delle stelle e dei feedback è gestito con attributi HTML, mai con `classList`.
+- **Responsive by design**: breakpoint 900px (tablet) e 600px (smartphone), menu hamburger, griglie fluide, input a 16px su mobile (anti-zoom iOS).
 
 ## Social uniformati
 Instagram è **`https://www.instagram.com/webnix.it`** ovunque (JSON-LD, footer, config.js) — risolta l'incoerenza con `webnix_italia`.
